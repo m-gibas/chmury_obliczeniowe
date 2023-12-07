@@ -140,7 +140,8 @@ app.post('/api/watched', async (req, res) => {
     }
   });
   
-  // Endpoint do usuwania filmu
+  // Usuwanie
+  
   app.delete('/api/movies/:title', async (req, res) => {
     const session = driver.session();
     const movieTitle = req.params.title;
@@ -158,7 +159,6 @@ app.post('/api/watched', async (req, res) => {
     }
   });
   
-  // Endpoint do usuwania relacji obejrzanego filmu
   app.delete('/api/watched/:userName/:movieTitle', async (req, res) => {
     const session = driver.session();
     const userName = req.params.userName;
