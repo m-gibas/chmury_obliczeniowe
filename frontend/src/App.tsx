@@ -12,7 +12,7 @@ function App() {
   const [userName, setUserName] = useState('');
   const [movieTitle, setMovieTitle] = useState('');
 
-  const apiUrl = 'http://localhost:3000/api';
+  const apiUrl = 'https://chmury-obliczeniowe-adel-digq6sm5u-m-gibas-projects.vercel.app';
 
   // Funkcja do pobierania danych
   useEffect(() => {
