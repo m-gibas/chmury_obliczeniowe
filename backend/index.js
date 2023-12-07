@@ -1,12 +1,13 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const neo4j = require('neo4j-driver');
 
 const app = express();
 const port = 3000;
 
+app.use(bodyParser.json());
 app.use(cors());
-app.use(express.json());
 
 // Konfiguracja połączenia z bazą Neo4j
 const driver = neo4j.driver(
@@ -184,4 +185,5 @@ app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
 
+module.exports = driver;
 module.exports = app;
