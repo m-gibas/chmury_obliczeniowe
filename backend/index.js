@@ -16,7 +16,7 @@ const driver = neo4j.driver(
 );
 
 // Endpoint do pobierania wszystkich użytkowników
-app.get('/db/users', async (req, res) => {
+app.get('/api/users', async (req, res) => {
   const session = driver.session();
 
   try {
@@ -32,7 +32,7 @@ app.get('/db/users', async (req, res) => {
 });
 
 // Endpoint do pobierania wszystkich filmów
-app.get('/db/movies', async (req, res) => {
+app.get('/api/movies', async (req, res) => {
   const session = driver.session();
 
   try {
@@ -48,7 +48,7 @@ app.get('/db/movies', async (req, res) => {
 });
 
 // Endpoint do pobierania relacji użytkownik-film
-app.get('/db/watched', async (req, res) => {
+app.get('/api/watched', async (req, res) => {
   const session = driver.session();
 
   try {
@@ -67,7 +67,7 @@ app.get('/db/watched', async (req, res) => {
 });
 
 // Endpoint do dodawania nowego użytkownika
-app.post('/db/users', async (req, res) => {
+app.post('/api/users', async (req, res) => {
   const session = driver.session();
   const { name } = req.body;
 
@@ -84,7 +84,7 @@ app.post('/db/users', async (req, res) => {
 });
 
 // Endpoint do dodawania nowego filmu
-app.post('/db/movies', async (req, res) => {
+app.post('/api/movies', async (req, res) => {
   const session = driver.session();
   const { title } = req.body;
 
@@ -101,7 +101,7 @@ app.post('/db/movies', async (req, res) => {
 });
 
 // Endpoint do dodawania relacji użytkownik-film
-app.post('/db/watched', async (req, res) => {
+app.post('/api/watched', async (req, res) => {
     const session = driver.session();
     const { userName, movieTitle } = req.body;
   
@@ -123,7 +123,7 @@ app.post('/db/watched', async (req, res) => {
   });
 
 
-  app.delete('/db/users/:name', async (req, res) => {
+  app.delete('/api/users/:name', async (req, res) => {
     const session = driver.session();
     const userName = req.params.name;
   
@@ -142,7 +142,7 @@ app.post('/db/watched', async (req, res) => {
   
   // Usuwanie
   
-  app.delete('/db/movies/:title', async (req, res) => {
+  app.delete('/api/movies/:title', async (req, res) => {
     const session = driver.session();
     const movieTitle = req.params.title;
   
@@ -159,7 +159,7 @@ app.post('/db/watched', async (req, res) => {
     }
   });
   
-  app.delete('/db/watched/:userName/:movieTitle', async (req, res) => {
+  app.delete('/api/watched/:userName/:movieTitle', async (req, res) => {
     const session = driver.session();
     const userName = req.params.userName;
     const movieTitle = req.params.movieTitle;
@@ -182,7 +182,7 @@ app.post('/db/watched', async (req, res) => {
   });
 
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Server is running`);
 });
 
 module.exports = driver;
