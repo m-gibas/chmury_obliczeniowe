@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Jasne tło */
+  color: #333; /* Kolor tekstu */
+  margin: 20px;
+}
+
+h1 {
+  color: #006400; /* Ciemnozielony kolor dla nagłówków h1 */
+}
+
+h2 {
+  color: #006400; /* Ciemnozielony kolor dla nagłówków h2 */
+}
+
+ul {
+  list-style-type: none; /* Usunięcie domyślnych kropek przed listą */
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #006400; /* Prosty border w ciemnozielonym kolorze */
+  background-color: #fff; /* Białe tło dla każdego elementu listy */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #006400; /* Ciemnozielony kolor dla etykiet */
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #006400; /* Ciemnozielony kolor dla przycisków */
+  color: #fff; /* Biały kolor tekstu na przyciskach */
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004d00; /* Ciemszy odcień zielonego przy najechaniu myszką */
+}
